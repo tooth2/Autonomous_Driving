@@ -126,7 +126,6 @@ model.add(Cropping2D(cropping=((70,25), (0,0))))
  ![original vs. flipped image][image2]
 
 #### step5. Nvidia archiecture
-  ![step5vs6][image5]
   ##### modified NVIDIA architecture
   Applied NVIDIA 's [end-to-end deep learning  for self-driving cars](https://arxiv.org/pdf/1604.07316v1.pdf): which consists of 9 layers, including an image normalization layer, 5 convolutional layers, and 3 fully connected layers. The first layer of the network performs image normalization using keras Lambda. Performing normalization in the network allows the normalization scheme to be altered with the network architecture, and to be accelerated via GPU processing.
   Plus, applied solely convlutional network with (2x2) strides rather than adding Maxpooling by following [this paper](https://arxiv.org/abs/1412.6806) ; "max-pooling can simply be replaced by a convolutional layer with increased stride without loss in accuracy"
