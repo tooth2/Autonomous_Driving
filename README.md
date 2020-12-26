@@ -80,10 +80,9 @@ Creates a video based on images found in the `run1` directory. The name of the v
 
  ### 2. Model Architecture
  The initial architecture is simple activation --> LeNet Architecture --> NVidia Architecture
+ 
  #### step1. simple activation vs. step2. Data Normalization
-
 The model includes ReLU(Rectified Linear Unit) layers to introduce nonlinearity.
-
 #### step2. Data normalization : Lambda layer
  The data is normalized in the model using a keras Lambda layer.
 In Keras, lambda layers can be used to create arbitrary functions that operate on each image as it passes through the layer. The lambda layer will also ensure that the model will normalize input images when making predictions in drive.py.
@@ -93,8 +92,8 @@ model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape=(160,320,3)))## pixel 
 ```
 After normalization(step2) , the MSE dramatically has been lowered down from step1. However, among step2 epochs, a couple low MSE(mean squared error) on the training set but a high MSE(mean squared error) on the validation set is oberserved. This implies that the model was overfitting. And still there is a big mse value difference among epochs in step2.
 Here are step1.step2 result:
+![step1 vs step2][image3]
 
-![step1 vs step2][image5]
 #### Attempts to reduce overfitting in the model
 The model was trained and validated on different data sets to avoid overfitting.
 In order to gauge how well the model was working, I splitted image and steering angle data into a training set(80%) and a validation set(20%) to avoid overfitting by using scikit-learn train_test_split method.
@@ -105,7 +104,6 @@ train_samples, validation_samples = train_test_split(samples, test_size=0.2)
 ```
 
 #### step3. LeNetArchitecture
-![step3vs step4][image2]: step34.png
  Applied LeNet Archiecture which consists of two sets of convolutional and Max pooling layers, followed by a flattening layer, then two fully-connected layers.
  A CNN(convolutional neural network) with 3x3 filter sizes and depths between 32 and 64 (model.py lines 18-24) is used. This model shows a better performance comapred to step 2 in the following performance result on the left esp on the 1st epochs.
  
@@ -128,7 +126,7 @@ model.add(Cropping2D(cropping=((70,25), (0,0))))
  ![original vs. flipped image][image2]
 
 #### step5. Nvidia archiecture
-  ![step5vs6][image3]
+  ![step5vs6][image5]
   ##### modified NVIDIA architecture
   Applied NVIDIA 's [end-to-end deep learning  for self-driving cars](https://arxiv.org/pdf/1604.07316v1.pdf): which consists of 9 layers, including an image normalization layer, 5 convolutional layers, and 3 fully connected layers. The first layer of the network performs image normalization using keras Lambda. Performing normalization in the network allows the normalization scheme to be altered with the network architecture, and to be accelerated via GPU processing.
   Plus, applied solely convlutional network with (2x2) strides rather than adding Maxpooling by following [this paper](https://arxiv.org/abs/1412.6806) ; "max-pooling can simply be replaced by a convolutional layer with increased stride without loss in accuracy"
