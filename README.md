@@ -194,6 +194,7 @@ For the performance measure, mean squared error is used. Once model is loaded, c
  - one lap focusing on smoth driving on the curve
  - one lap focusing on accelerating speed in the straight line vs curved line 
  - especially focusing on recevery driving when approaching to side blocks 
+
 NVIDIA architecture was applied and the [Video](video.mp4) was recorded during the first lap from autonomous driving according the final model.
 The result shows autonomous vehicle's adaptive driving behavior on the most dramatic curved line.
 
