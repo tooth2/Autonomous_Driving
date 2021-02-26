@@ -193,7 +193,7 @@ For the performance measure, mean squared error is used. Once model is loaded, c
  After driving two laps in the simulator, I was able to generate driving images and train them to learn 
  - one lap focusing on smoth driving on the curve
  - one lap focusing on accelerating speed in the straight line vs curved line 
- - especially focusing on recevery driving when approaching to side blocks 
+ - especially focusing on recevery driving from the side (right)
 
 NVIDIA architecture is applied and the [Video](video.mp4) is generated during the first lap from autonomous driving based on the final [model](model.h5).
 The result shows autonomous vehicle's adaptive driving behavior on the most dramatic curved line.
@@ -205,7 +205,7 @@ The result shows autonomous vehicle's adaptive driving behavior on the most dram
  2. Driving Counter-Clockwise: helping the model more generalized
  3. use both tracks  -->  collecting data from the second track in order to generalize the model
  4. collecting more data
-  - two or three laps of center lane driving(Done)
- - one lap of recovery driving from the sides
- - one lap focusing on driving smoothly around curves(Done)
- - rapid curve or bridge on the water(Done)
+ - [x] two or three laps of center lane driving
+ - [x] one lap of recovery driving from the sides
+ - [x] one lap focusing on driving smoothly around curves
+ - [x] rapid curve or bridge on the water
