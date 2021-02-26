@@ -196,6 +196,7 @@ For the performance measure, mean squared error is used. Once model is loaded, c
  - especially focusing on recevery driving when approaching to side blocks 
 NVIDIA architecture was applied and the [Video](video.mp4) was recorded during the first lap from autonomous driving according the final model.
 The result shows autonomous vehicle's adaptive driving behavior on the most dramatic curved line.
+
 ![00:48~ 1:08](driving_result.gif)
 
  #### More data collection that I could try ...
