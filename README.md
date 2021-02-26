@@ -188,6 +188,16 @@ For the performance measure, mean squared error is used. Once model is loaded, c
  ```code
  python drive.py model.h5
  ```
+ 
+ #### Result
+ After driving two laps in the simulator, I was able to generate driving images and train them to learn 
+ - one lap focusing on smoth driving on the curve
+ - one lap focusing on accelerating speed in the straight line vs curved line 
+ - especially focusing on recevery driving when approaching to side blocks 
+NVIDIA architecture was applied and the [Video](video.mp4) was recorded during the first lap from autonomous driving according the final model.
+This shows most dramatic curved line driving from the result.
+![00:48~ 1:08](driving_result.gif)
+
  #### More data collection that I could try ...
  1. Recovery Lap: to avoid the car seers off to the side in a sharp drive, to recover back to center
  2. Driving Counter-Clockwise: helping the model more generalized
